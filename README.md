@@ -1,20 +1,78 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Software Design Document for Shannon's Cleaning Service
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## 1. Introduction
+### Purpose
+Develop a website for Shannon's Cleaning Service (SCS) that displays service information, allows user login to view pricing after evaluations by the Admin Team (AT), and provides an admin panel for additional configurations and management.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+### Scope
+The application includes:
+- User dashboard and account modification features (contact, address, square footage, booking history)
+- Information-only pages about available cleaning services
+- An admin panel for the AT to manage client accounts and pricing.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+### Definitions, Acronyms, and Abbreviations
+- SCS: Shannon's Cleaning Service
+- AT: Admin Team (consisting of Shannon)
+- TT: Tech Team (consisting of myself/ckplace programs)
+- Consults: Prospective clients
+- Bookings: One-off client cleanings
+- Clients: Individuals or businesses creating bookings
+- Partners: Contract-bound cleaning service obligations
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## 2. Overall Description
+### Product Perspective
+This system is standalone and manages all aspects of the service internally without external integrations.
+
+### Product Functions
+- User registration and authentication
+- Display of service information
+- Account management for clients and the AT
+- Data storage and management
+
+### User Characteristics
+- AT and TT for system management and updates
+- Customers (clients and partners) for service bookings and account management
+
+### Constraints
+- The system will not handle payments or integrate with external services.
+- All operations and data management are conducted locally.
+
+## 3. System Features
+### User Registration and Account Management
+- **Functional Requirements**: Secure registration and login with MFA, account creation and management handled by AT and TT.
+
+### Admin Panel
+- **Functional Requirements**: Enable AT to manage user accounts, set and adjust pricing based on evaluations, and manage booking details.
+
+### Information Display
+- **Functional Requirements**: Static pages managed by TT to inform clients and partners about services and pricing. Prices adjusted based on square footage and evaluations.
+
+## 4. External Interface Requirements
+### User Interfaces
+- Detailed account management interfaces for users and AT.
+- Information-only interfaces for service details.
+
+### Software Interfaces
+- **Database**: PostgreSQL hosted on render.com
+
+### Communications Interfaces
+- All communication over HTTPS.
+
+## 5. Other Nonfunctional Requirements
+### Performance Requirements
+- The application should feature nearly instant load times.
+
+### Security Requirements
+- MFA for all user and admin accounts.
+
+### Software Quality Attributes
+- Minimal maintenance required, designed for reliability and ease of use.
+
+## 6. System Models
+- **(To be developed)** System architecture and data flow diagrams will be prepared in the next stages of development.
+
+## 7. Appendices
+- **(Not applicable)**
+
+## 8. Index
+- **(Auto-generated)**
