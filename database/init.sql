@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Admin_Account;
 DROP TABLE IF EXISTS Requests;
 -- Create Partner_Account table
 CREATE TABLE Partner_Account (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT SERIAL PRIMARY KEY,
     password VARCHAR(255) NOT NULL,
     mfa_secret VARCHAR(255) DEFAULT NULL,
     name VARCHAR(255) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE Partner_Account (
 );
 -- Create Admin_Account table
 CREATE TABLE Admin_Account (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT SERIAL PRIMARY KEY,
     password VARCHAR(255) NOT NULL,
     mfa_secret VARCHAR(255) DEFAULT NULL,
     name VARCHAR(255) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE Admin_Account (
 );
 -- Create Requests table
 CREATE TABLE Requests (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL,
     square_footage INT NOT NULL,
