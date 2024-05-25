@@ -24,26 +24,23 @@ const pool = new Pool({
 app.use(express.json());
 
 const { auth } = require('express-openid-connect');
-
 const config = {
     authRequired: false,
     auth0Logout: true,
     secret: process.env.SECRET,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIENT_ID,
-    issuerBaseURL: process.env.ISSUER_BASE_URL
+    baseURL: 'http://localhost:5301',
+    clientID: '28CFi7P1HGAUZERen9WE5wJznUo8IS9L',
+    issuerBaseURL: 'https://dev-zc5gnsu13c4qqoz2.us.auth0.com'
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
-// Middleware to make the `user` object available for all views
-app.use(function (req, res, next) {
-    res.locals.user = req.oidc.user;
-    next();
-});
-
 const indexRouter = require('./routes/index');
+
+const setAuthStatus = require('./Tools/authTools');
+
+app.use(setAuthStatus);
 app.use('/', indexRouter);
 
 //error handling
