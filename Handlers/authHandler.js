@@ -13,9 +13,9 @@ const config = {
 
 const oAuthConnection = auth(config);
 
-function setAuthStatus(req, res, next) {
+function getAuthStatus(req, res, next) {
     res.locals.isAuthenticated = req.oidc.isAuthenticated();
     next();
 }
 
-module.exports = { oAuthConnection, setAuthStatus };
+module.exports = { oAuthConnection, getAuthStatus };

@@ -1,11 +1,17 @@
 const express = require('express');
-const router = express.Router();
 const baseController = require('../controllers/baseController');
+const { requiresAuth } = require('express-openid-connect');
+accountRoute = require('./account/account');
+
+const router = express.Router();
+
+//base routing
+router.get('/', baseController.loadDefaults);
 
 /** DELEGATION **/
-accountRoute = require('./account');
-router.use('/account', accountRoute);
-router.get('/', baseController.loadDefaults);
+
+//accounts
+router.use('/account', requiresAuth(), accountRoute);
 
 /** ERROR HANDLING **/
 router.use(async (req, res, next) => {

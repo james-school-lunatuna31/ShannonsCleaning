@@ -16,14 +16,11 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/layout');
 
-/** ROUTING */
-
-app.use('/', indexRouter);
-
 /** MIDDLEWARE */
 
 app.use(authHandler.oAuthConnection);
-app.use(authHandler.setAuthStatus);
+app.use(authHandler.getAuthStatus);
+
 // PostgreSQL connection setup
 // eslint-disable-next-line
 const pool = new Pool({
@@ -33,6 +30,10 @@ const pool = new Pool({
     password: 'yourPassword',
     port: 5432
 });
+
+/** ROUTING */
+
+app.use('/', indexRouter);
 
 /** ERROR HANDLING */
 
