@@ -3,9 +3,9 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-const { Pool } = require('pg');
 const authHandler = require('./Handlers/authHandler');
 const indexRouter = require('./routes/index');
+const bodyParser = require('body-parser');
 
 /** SETUP FUNCTIONS */
 
@@ -16,20 +16,13 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/layout');
 
+// Middleware to parse request body
+
 /** MIDDLEWARE */
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(authHandler.oAuthConnection);
 app.use(authHandler.getAuthStatus);
-
-// PostgreSQL connection setup
-// eslint-disable-next-line
-const pool = new Pool({
-    user: 'yourUsername',
-    host: 'localhost',
-    database: 'yourDatabase',
-    password: 'yourPassword',
-    port: 5432
-});
 
 /** ROUTING */
 

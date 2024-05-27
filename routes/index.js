@@ -7,6 +7,11 @@ const router = express.Router();
 
 //base routing
 router.get('/', baseController.loadDefaults);
+// router.get('/createaccount', (req, res) => {
+//     res.render('partials/createaccount', { title: 'Create Account' });
+// });
+
+// router.post('/createaccount', accountController.createUser);
 
 /** DELEGATION **/
 
