@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 dotenv.config();
 const app = express();
 app.use(expressLayouts);
+
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/layout');
