@@ -1,14 +1,23 @@
 <header>
-  <h1>This is the header</h1>
+  <div class="main">
+  <div class="logo"></div>
   <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <% if (isAuthenticated) { %>
-        <li><a href="/logout">Logout</a></li>
-      <% } else { %>
-        <li><a href="/login">Login</a></li>
-      <% } %>
-      <li><a href="/createaccount">Create Account</a></li>
-    </ul>
+    <a href="/home">Home</a>
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
   </nav>
+  </div>
+  <div id="slideshow">
+    <% imageList.forEach(function(image, index) { %>
+      <div class="slide <%= index === 0 ? 'active' : '' %>" style="background-image: url('<%= image %>');"></div>
+    <% }); %>
+    <div class="shader">  </div>
+    <% if (isAuthenticated) { %>
+      <label class="welcome-label">Welcome</label>
+    <% } else { %>
+      <button class="partner-button">Become a Partner</button>
+    <% } %>
+  </div>
 </header>
+<script type="module" src="/scripts/dynamicFields.js"></script>

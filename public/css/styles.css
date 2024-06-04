@@ -1,0 +1,84 @@
+#slideshow {
+  position: relative;
+  width: 90%;
+  height: 42rem;
+  width: 100%;
+  overflow: hidden;
+  background-color: lightgray; /* Added to make the slideshow container visible */
+}
+.shader{
+  opacity: .6;
+  background-color: #070975; /* primary color of site */
+  height:100%;
+  width:auto
+}
+header .main{
+  display: flex;
+}
+header nav{
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin: 3.2rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.6rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding: 8px; /* Space for the underline */
+  border-radius: 50%; /* Ensure the border-radius is always circular */
+  border-bottom: 4px solid transparent; /* Transparent border by default */
+  box-shadow: 0 0 0 1px transparent; /* Transparent shadow by default */
+}
+
+header nav a:hover {
+  color: #007BFF;
+  border-bottom: 4px solid purple; /* Purple underline */
+  box-shadow: 0 0 0 1px black; /* Thin black circle */
+}
+.logo{
+  height: auto;
+  width: 100%;
+  background-image: url('/images/header/logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.partner-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007BFF; /* button color primary */
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  padding: 1.25rem 2.5rem;
+  cursor: pointer;
+}
+
+.welcome-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem; 
+}
