@@ -63,8 +63,9 @@ The application will exclusively manage non-financial data and user interactions
 
 ### User Registration and Account Management
 
-- **SCS-R001**: Secure user registration and login process using OAuth provided by Auth0
-- **SCS-R002**: Price management and contact information available to AT. Users will create their own account.
+- **SCS-R001**: Secure user registration and login process using OAuth provided by Auth0.
+- **SCS-R002.1**: Price management and contact information available to AT. Users will create their own account.
+- **SCS-R002.2**: Users shall manage their account via the user portal.
 
 ### Admin Panel
 
