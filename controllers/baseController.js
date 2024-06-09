@@ -2,7 +2,7 @@ const baseController = {};
 
 baseController.loadDefaults = function (req, res) {
     res.render('index', {
-        title: 'Home Page'
+        title: 'About Me'
     });
 };
 

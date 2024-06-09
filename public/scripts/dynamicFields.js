@@ -3,7 +3,9 @@ const dynamicFields = {};
 dynamicFields.generateHeader = function () {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('header nav a');
+    console.log(currentPath);
     navLinks.forEach(link => {
+        console.log(link);
         if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
         } else {

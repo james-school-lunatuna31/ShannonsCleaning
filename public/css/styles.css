@@ -1,14 +1,17 @@
+body{
+ background-color: var(--page-fill);
+}
 #slideshow {
   position: relative;
   width: 90%;
   height: 42rem;
   width: 100%;
   overflow: hidden;
-  background-color: lightgray; /* Added to make the slideshow container visible */
+  background-color: lightgray;
 }
 .shader{
   opacity: .6;
-  background-color: #070975; /* primary color of site */
+  background-color: var(--dark-accent);
   height:100%;
   width:auto
 }
@@ -20,6 +23,7 @@ header nav{
   justify-content: flex-end;
   gap: 2rem;
   margin: 3.2rem;
+  margin-bottom:1rem;
 }
 
 header nav a {
@@ -28,17 +32,23 @@ header nav a {
   font-size: 1.6rem;
   transition: color 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  padding: 8px; /* Space for the underline */
-  border-radius: 50%; /* Ensure the border-radius is always circular */
-  border-bottom: 4px solid transparent; /* Transparent border by default */
-  box-shadow: 0 0 0 1px transparent; /* Transparent shadow by default */
+  padding: 8px;
+  border-radius: 50%;
+  border-bottom: 4px solid transparent;
+  box-shadow: 0 0 0 1px transparent;
 }
 
 header nav a:hover {
-  color: #007BFF;
-  border-bottom: 4px solid purple; /* Purple underline */
-  box-shadow: 0 0 0 1px black; /* Thin black circle */
+  color: var(--primary-button-color);
+  border-bottom: 4px solid var(--accent-color);
+  box-shadow: 0 0 0 1px black;
 }
+
+header nav a.active{
+  border-bottom: 4px solid var(--accent-color);
+  font-weight: bold;
+}
+
 .logo{
   height: auto;
   width: 100%;
@@ -66,7 +76,7 @@ header nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #007BFF; /* button color primary */
+  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 2rem;
@@ -81,4 +91,21 @@ header nav a:hover {
   transform: translate(-50%, -50%);
   color: white;
   font-size: 1.5rem; 
+}
+
+h1, h2, h3 {
+  margin-left: 1rem;
+  color:var(--heading-color)
+}
+
+div.bodycontent {
+  margin-left: 2rem;
+}
+
+:root {
+  --primary-button-color: #007BFF;
+  --accent-color: purple;
+  --heading-color: rgba(113, 44, 113, 0.89);
+  --dark-accent: #070975;
+  --page-fill: #f1f1f1;
 }

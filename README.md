@@ -63,23 +63,22 @@ The application will exclusively manage non-financial data and user interactions
 
 ### User Registration and Account Management
 
-- **SCS-R001**: Secure user registration and login process with multi-factor authentication (MFA).
-- **SCS-R002**: User account management facilitated by the AT with provisions for updating contact information, booking history, and service evaluations.
+- **SCS-R001**: Secure user registration and login process using OAuth provided by Auth0
+- **SCS-R002**: Price management and contact information available to AT. Users will create their own account.
 
 ### Admin Panel
 
 - **SCS-R003**: Tools for the AT to adjust service pricing dynamically based on user evaluations and predefined criteria.
-- **SCS-R004**: Management of user accounts and detailed tracking of service bookings and client interactions.
+- **SCS-R004**: Management of user accounts with ability to delete or edit user account information
 
 ### Information Display
 
-- **SCS-R005**: Static pages providing detailed information on available services, tailored to different user demographics (clients vs. partners).
+- **SCS-R005**: Static pages providing detailed information on available services, tailored to clients.
 
 ### Stretch Requirements (Optional Enhancements)
 
-- **SCS-R006**: Integration with external calendar services for scheduling.
-- **SCS-R007**: Integration with an external service such a Stripe for billing. (not planned as requested by Sponsor)
-- **SCS-R008**: Booking through the site and auto calender management.
+- **SCS-R006**: Integration with external auth provider
+- **SCS-R007**: Deployment on Azure web services
 
 ## 5. External Interface Requirements
 
@@ -89,7 +88,7 @@ Design user-friendly, intuitive interfaces for both clients and the Admin Team, 
 
 ### Software Interfaces
 
-Database: Utilize PostgreSQL for robust data management, hosted on Render.com.
+Database: Utilize PostgreSQL for robust data management, hosted on Render.com. Web deployment on Azure
 
 ### Communications Interfaces
 
@@ -103,7 +102,7 @@ Optimize the web application for performance, aiming for minimal load times and 
 
 ### Security Requirements
 
-Implement comprehensive security measures including MFA and regular security audits to safeguard user data and system integrity.
+Implement comprehensive security measures utilizing OAuth.
 
 ### Software Quality Attributes
 
@@ -119,13 +118,9 @@ Client data, including profiles and booking history, stored in encrypted format 
 
 All data transmissions secured via HTTPS.
 
-### Data State
-
-Use of state management tools like Redux to manage application state across different user interactions.
-
 ### HMI/HCI/GUI
 
-Detailed mock-ups of user interfaces ensuring the application is user-friendly and intuitive.
+Detailed mock-ups of user interfaces ensuring the application is user-friendly and intuitive. (available to design team on LucidChart)
 
 ## 8. Verification and Testing
 
@@ -135,12 +130,4 @@ Demonstrate all functionalities during a live session using test cases that cove
 
 ### Testing
 
-Functionally test each feature (SCS-R001 to R005) to ensure it works as intended. User feedback and beta testing for additional features (SCS-R006 and R008).
-
-## 9. Appendices
-
-(Not applicable)
-
-## 10. Index
-
-(Not applicable at this time)
+Functionally test each feature (SCS-R001 to R007) to ensure it works as intended.
